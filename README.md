@@ -1,7 +1,7 @@
 #Unsupervised Learning
 #Clustering Algorithms
 
-## What is unsupervised learning & what's a clustering algorithm? What's the difference with supervised learning and what's its purpose?
+## 1. What is unsupervised learning & what's a clustering algorithm? What's the difference with supervised learning and what's its purpose?
 
 The main types of ML are supervised and unsupervised. In **supervised** learning, the model is trained with labeled data, where each input has a corresponding output.
 Types of supervised learning:
@@ -47,7 +47,7 @@ It’s part math, part interpretation. Different metrics can differ. The result 
 **Stability** becomes a primary validation tool → Running the same algorithm multiple times with different random seeds or on bootstrap samples of the data, and checking whether the clusters stay consistent.
 
 
-## Explain the conceptual difference between centroid-based (partitional) clustering and hierarchical clustering, mentioning one representative algorithm for each approach. 
+## 2. Explain the conceptual difference between centroid-based (partitional) clustering and hierarchical clustering, mentioning one representative algorithm for each approach. 
 
 The conceptual difference: Centroid requires to commit to a number of clusters in advance, before seeing the structure; while hierarchical doesn’t require to specify this upfront, it reveals the structure first and lets you decide where to cut after. The tradeoff is **cost**, centroid scales well to large datasets, and hierarchical is computationally expensive and becomes impractical at scale, because it needs to compute distances at every merge step. 
 
@@ -66,3 +66,17 @@ Focuses on building a hierarchy of clusters in the form of a tree, also known as
 Approaches: Agglomerative (merges them step by step), Divisive (splits into smaller).
 Advantages:Provides a full hierarchy, easy to visualize, not specifying number upfront.
 Limitations: Computationally intensive for large datasets, merging/splitting decisions are **irreversible**, choosing parameters can be difficult.
+
+
+## 3. What is density-based clustering (such as DBSCAN) and how does its approach differ from centroid-based and hierarchical clustering?
+
+Instead of grouping, it defines clusters as regions of the feature space where datapoints are densely packed together. A point belongs to a cluster if it has enough neighbouring points within a given radius. Points in low density areas are treated as noise and not assigned.
+
+Algorithms: DBSCAN (epsilon, min_samples), OPTICS.
+Advantages: Handles clusters of varying shapes and sizes, doesn’t require cluster count upfront, effective in noisy datasets.
+Limitations: Difficult to choose parameters like epsilon and min points, less effective for varying density clusters (except OPTICS).
+
+The main divergence from connectivity based (hierarchical) and centroid is that those ones are compelled to assign every single point to a cluster, neither one has a concept of rejection. Basically density-based handles outliers, while the others don’t.
+
+
+## 4. 
