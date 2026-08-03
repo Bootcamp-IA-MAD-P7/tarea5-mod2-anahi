@@ -1,2 +1,50 @@
-# tarea5-mod2-anahi
-Investigación y Desarrollo sobre Algoritmos de Clustering
+#Unsupervised Learning
+#Clustering Algorithms
+
+## What is unsupervised learning & what's a clustering algorithm? What's the difference with supervised learning and what's its purpose?
+
+The main types of ML are supervised and unsupervised. In **supervised** learning, the model is trained with labeled data, where each input has a corresponding output.
+Types of supervised learning:
+Regression. Used to predict continuous values, learns how to connect input data to a specific number or value.
+Classification. Used to predict categorical data, learns how to connect input data with the probability of belonging to different groups of categories.
+
+In the case of **unsupervised** learning, it involves training the model with unlabeled data, which helps to uncover patterns, structures or relationships within the data without predefined outputs. Basically, the machine learns by discovering hidden structures within the data without being told what the correct output should be. It’s divided in 2 categories of algorithms:
+Association rule learning: Used to find patterns and relationships between different items in a dataset, it looks for rules. Some common ones are: Apriori, Eclat & FP-Growth.
+Dimensionality reduction: Transform data from high-dimensional spaces to low-dimensional spaces without compromising meaningful properties in the original data.
+Clustering.
+
+### Applications
+
+Unsupervised learning can be used for:
+Natural language processing (NPL).
+Image and video analysis.
+Anomaly detection. Used to identify data points, events and/or observations that deviate from a dataset’s normal behavior.
+Customer segmentation.
+Recommendation engines.
+
+### Clustering Algorithms
+
+They’re used to group similar data points together without using labelled data that helps to discover hidden patterns or natural groupings in datasets. They work by repeatedly moving data points closer to the center of their group (cluster) and further from points in other groups. This helps the algorithm to create clear and meaningful clusters.
+Types of clustering:
+Hard clustering: Assigns each data point to exactly one cluster. A data point can’t belong to multiple clusters, there’s no overlap. Making the grouping clear and easy to interpret. Common uses: Market segmentation, customer grouping, document clustering.
+Its limitation is that it can’t represent overlapping groups,it cannot handle situations where a data point may logically belong to multiple groups.
+Soft clustering: It allows a data point to belong to multiple clusters with different probabilities. Instead of assigning a strict cluster, it gives a **degree** of membership to each cluster.
+Common uses: Overlapping class boundaries, customer personas (multiple behavioral groups), medical diagnosis.
+They’re beneficial to capture ambiguity and model gradual transitions.
+
+In summary, untagged data is grouped based on their similarities and differences, to help identify groups with similar properties.
+
+#### Main difference
+
+Supervised learning → **External** evaluation. 
+The answer key lives outside the model. The evaluation signal is **independent** of what the model learned.
+Very clean measurable way.
+
+Unsupervised learning → **Internal** evaluation
+There’s no answer key. The evaluation is inherently self-referential: the model defines the structure, and the metrics validate that structure using the same data that generated it. There’s no equivalent of generalization error in the supervised sense, instead, you proxy it for using cluster stability across bootstrap samples or random initializations, and ultimately rely on downstream task performance or domain expert interpretation to determine whether the discovered structure is semantically meaningful, not just geometrically consistent.
+The  model creates its own structure based entirely on the geometry of the input data.
+It’s part math, part interpretation. Different metrics can differ. The result could be mathematically valid, but semantically meaningless. 
+**Stability** becomes a primary validation tool → Running the same algorithm multiple times with different random seeds or on bootstrap samples of the data, and checking whether the clusters stay consistent.
+
+
+## 
