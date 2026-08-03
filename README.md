@@ -47,4 +47,22 @@ It’s part math, part interpretation. Different metrics can differ. The result 
 **Stability** becomes a primary validation tool → Running the same algorithm multiple times with different random seeds or on bootstrap samples of the data, and checking whether the clusters stay consistent.
 
 
-## 
+## Explain the conceptual difference between centroid-based (partitional) clustering and hierarchical clustering, mentioning one representative algorithm for each approach. 
+
+The conceptual difference: Centroid requires to commit to a number of clusters in advance, before seeing the structure; while hierarchical doesn’t require to specify this upfront, it reveals the structure first and lets you decide where to cut after. The tradeoff is **cost**, centroid scales well to large datasets, and hierarchical is computationally expensive and becomes impractical at scale, because it needs to compute distances at every merge step. 
+
+#### Centroid clustering
+
+Groups data points around central points (centroids or medoids). Each cluster is represented by a point, and data points are assigned to the nearest centre. 
+
+Algorithms: K-Means, K-Medroids (robust to outliers).
+Advantages:Fast and scalable for large datasets, simple to implement and interpret.
+Limitations: Requires choosing a number of clusters in advance, non suitable to non-spherical clusters.
+
+#### Hierarchical clustering
+
+Focuses on building a hierarchy of clusters in the form of a tree, also known as **Dendogram**, that shows relationships between clusters.
+
+Approaches: Agglomerative (merges them step by step), Divisive (splits into smaller).
+Advantages:Provides a full hierarchy, easy to visualize, not specifying number upfront.
+Limitations: Computationally intensive for large datasets, merging/splitting decisions are **irreversible**, choosing parameters can be difficult.
