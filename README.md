@@ -1,5 +1,4 @@
-#Unsupervised Learning
-#Clustering Algorithms
+#Unsupervised Learning. Clustering Algorithms
 
 ## 1. What is unsupervised learning & what's a clustering algorithm? What's the difference with supervised learning and what's its purpose?
 
